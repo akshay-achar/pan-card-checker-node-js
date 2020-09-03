@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title> Pan Card Checker </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <center>
+      <h1> Pan Card Checker </h1> 
+      <form action="/get-pan-card-number" method="POST" enctype="multipart/form-data" id="panCardValidationForm">
+        <label for="fileUpload"> Upload The Image : </label>
+        <input type="file"  accept="image/*" name="fileUpload" id="file" oninput="loadFile(event)" required><br><br>
+        <p id="uploadedImage" style="display: none;"> Uploaded Image: <img id="output" width="200" /></p>
+        <p id="message" style="display: none;"></p>
+        <input type="submit" value="Submit">        
+      </form>
+    </center>
+    <script src="js/checker.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+node_modules
+package-lock.json
+public/img/originalFiles
+public/img/compressedFiles
