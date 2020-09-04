@@ -1,14 +1,14 @@
 const imagemin = require('imagemin')
-const imageminJpegtran = require('imagemin-jpegtran')
 const imageminPngquant = require('imagemin-pngquant')
 const path = require('path')
 const tesseract = require('node-tesseract-ocr')
+const imageminMozjpeg = require('imagemin-mozjpeg')
 
 const fileCompression = async (inputFileLocation) => {
   const files = await imagemin([inputFileLocation], {
     destination: path.join(__dirname, process.env.COMPRESSED_FILE_UPLOADED_LOCATION),
     plugins: [
-      imageminJpegtran(),
+      imageminMozjpeg({ progressive: true }),
       imageminPngquant({
         quality: [0.6, 0.8]
       })
